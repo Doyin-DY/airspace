@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { estate_keys } from '../assets/images'
-import {BsEnvelopePaper} from "react-icons/bs"
+import {BsEnvelopePaper} from 'react-icons/bs'
 import PhoneInput from 'react-phone-number-input'
 import flags from 'react-phone-number-input/flags'
 import 'react-phone-number-input/style.css'
