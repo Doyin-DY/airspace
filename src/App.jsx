@@ -1,55 +1,55 @@
-import React from 'react'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
-import Home from './pages/Home'
-import Listing from './pages/Listing'
-import Error from './pages/Error'
-import Header from './components/Header'
-import Contact from './pages/Contact'
-import Footer from './components/Footer'
-import SingleListing from './pages/SingleListing'
+import React from "react";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Home from "./pages/Home";
+import Listing from "./pages/Listing";
+import Error from "./pages/Error";
+import Header from "./components/Header";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+import SingleListing from "./pages/SingleListing";
 
 export default function App() {
-  function PageLayout (){
-    return <>
-      <Header />
-      <Outlet />
-      <Footer />
-    </>
+  function PageLayout() {
+    return (
+      <>
+        <Header />
+        <Outlet />
+        <Footer />
+      </>
+    );
   }
-  const pageRoutes =  createBrowserRouter([
+  const pageRoutes = createBrowserRouter([
     {
       path: "/",
       element: <PageLayout />,
       children: [
         {
           path: "/",
-          element: <Home />
+          element: <Home />,
         },
         {
-          path: "/Listing",
-          element: <Listing />
+          path: "/listing",
+          element: <Listing />,
         },
         {
-          path: "/Listing/:id",
-          element: <SingleListing/>
+          path: "/listing/:id",
+          element: <SingleListing />,
         },
         {
-          path: "/Contact",
-          element: <Contact />
+          path: "/contact",
+          element: <Contact />,
         },
-      ]
+      ],
     },
-    
+
     {
       path: "*",
-
-   
-      element: <Error />
-    }
-  ])
+      element: <Error />,
+    },
+  ]);
   return (
     <div className="bg-primary">
       <RouterProvider router={pageRoutes}></RouterProvider>
     </div>
-  )
+  );
 }
